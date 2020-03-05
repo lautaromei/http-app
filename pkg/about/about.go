@@ -10,14 +10,6 @@ type server struct {
 	router *mux.Router
 }
 
-func newServer() *server {
-	s := &server{}
-	s.router = mux.NewRouter()
-
-	s.routes()
-	return s
-}
-
 func (s *server) routes() {
 	s.router.HandleFunc("/about", s.handleAbout("Hi!"))
 }
