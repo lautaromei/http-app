@@ -23,8 +23,8 @@ func run() error {
 	return nil
 }
 
-func newAboutServer() *about.server {
-	s := &about.server{}
+func newAboutServer() *server {
+	s := &server{}
 	s.router = mux.NewRouter()
 
 	s.routes()
