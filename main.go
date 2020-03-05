@@ -5,8 +5,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-
-	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -17,16 +15,10 @@ func main() {
 }
 
 func run() error {
-	srv := newAboutServer()
+	srv := newServer()
+
+	fmt.Println("Starting web server on port 8080")
 	log.Fatal(http.ListenAndServe(":8080", srv))
 
 	return nil
-}
-
-func newAboutServer() *server {
-	s := &server{}
-	s.router = mux.NewRouter()
-
-	s.routes()
-	return s
 }
